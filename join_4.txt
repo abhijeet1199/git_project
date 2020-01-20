@@ -1,0 +1,27 @@
+
+
+select * from suppliers;
+select * from products;
+	
+select * from suppliers 
+left join products
+on suppliers.SUPPLIERID = products.SUPPLIERID; 
+
+
+select * from products;
+select * from CATEGORIES;
+select categories.categoryname,products.productname,products.unitprice,products.UNITSINSTOCK
+from categories 
+right join products
+on categories.CATEGORYID=products.CATEGORYID; 
+
+
+select e.firstname,e.lastname,e.job_id,e.manager_id,m.firstname"Manager_name"
+from employee e,employee m
+where e.manager_id=m.Employeeid;
+
+
+	
+select * from suppliers;
+select s.* from SUPPLIERS s,suppliers s1 
+where s.country=s1.country and s1.contactname='Robb Merchant';
