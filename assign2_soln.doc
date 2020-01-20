@@ -1,0 +1,28 @@
+select city from employees
+
+select freight from  orders
+
+SELECT freight, ROUND(freight,1) FROM orders;
+
+select unitprice,round(unitprice,2) from  Products
+
+SELECT SUBSTR(Address, 1, 10) FROM customers
+
+select phone  from customers union select phone  from shippers union select phone  from suppliers
+
+select firstname,lastname,orderid from employee e,orders o;
+
+select UPPER(firstname) ,UPPER(lastname) from employees
+
+select * from employees
+select * from department
+
+select Months_between (sysdate,hiredate)/12 As tenture from employees
+
+select firstname||' '|| lastname as Name,job_id,salary,d.department_name,l.city from employees natural join department natural join location_dtls l ; 
+
+select e.firstname,e.lastname,e.job_id,e.salary,d.department_name,l.city from employee e natural join department d natural join LOCATION_DTLS l;
+
+select lastname||' '||job_id ||' , '||department_name As Employee_details from employee natural join department;
+
+select e.firstname,e.lastname,d.department_name,l.city from employee e,department d , LOCATION_DTLS l where d.LOCATIONID=l.LOCATIONID AND l.city IN('Mumbai','Pune');
